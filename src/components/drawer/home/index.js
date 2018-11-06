@@ -22,6 +22,8 @@ import { Toolbar } from 'react-native-material-ui';
     )
   }
 }
+
+
 export default Home
 const styles = StyleSheet.create({
 

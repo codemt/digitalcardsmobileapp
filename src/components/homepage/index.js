@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Container } from 'native-base';
 import { Toolbar } from 'react-native-material-ui';
+import { createDrawerNavigator } from 'react-navigation';
 import SideBar from '../drawer/index';
+import Home from '../drawer/home/index';
+import AboutUs from '../drawer/aboutus/index';
  class HomePage extends Component {
      
   render() {
@@ -10,24 +13,29 @@ import SideBar from '../drawer/index';
 
     return (
 
-        <Container style={styles.container}>
-                    <Toolbar
-                    style={{ container: { backgroundColor: 'black' },centerElementContainer: {alignContent:'center'}}}
-                    leftElement="menu"
-                    centerElement="My Cards"
-                    searchable={{
-                    autoFocus: true,
-                    placeholder: 'Search',
-                    }}
-                    
-                 
-                
-                /> 
-            </Container>
+        <Drawer />
 
     )
   }
 }
+
+const Drawer = createDrawerNavigator({
+
+
+        Home : {
+
+               screen : Home 
+
+        },
+        Aboutus : { 
+
+                screen : AboutUs
+
+
+        }
+
+
+})
 export default HomePage
 const styles = StyleSheet.create({
 
