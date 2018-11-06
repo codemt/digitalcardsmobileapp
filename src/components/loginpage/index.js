@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Container, Header, Content, Form, Item, Input, Label , Button , Body, CheckBox ,ListItem, Text , View } from 'native-base';
+import { Container, Header, Content, Form, Item, Input, Label , Button , Body, CheckBox ,ListItem, Text , View  } from 'native-base';
 import { StyleSheet , Image } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 export default class LoginPage extends Component {
   render() {
 
@@ -14,12 +16,12 @@ export default class LoginPage extends Component {
                   <Form style={styles.form}>
                   <Image source={require('../../assets/images/batlogo.png')} style={styles.title} />
                     <Item fixedLabel>
-                      <Label style={{ color : 'red' }}>Username</Label>
+                      <Icon name="user" size={30} color="red" style={{marginRight:10}} /> 
                       <Input  style={{ color: 'white'}} />
                     </Item>
                     <Item fixedLabel last>
-                      <Label style={{ color : 'red' }}>Password</Label>
-                      <Input   style={{ color: 'white'}}  />
+                       <Icon name="mobile" size={30} color="red" style={{marginRight:10}}  />
+                      <Input  keyboardType="numeric" style={{ color: 'white'}}  />
                     </Item>
                     <Button full bordered light  style={styles.button}>
                     <Text style={{ color: 'red',textAlign:'center'}}> Sign Up/Sign In </Text>
@@ -32,9 +34,9 @@ export default class LoginPage extends Component {
                         <Button danger style={{ marginRight: 10,width:175,height:50 }} ><Text> Google </Text></Button>         
                   </View>  
                   <ListItem>
-                  <CheckBox checked={false} />
+                  <CheckBox checked={true} />
                   <Body>
-                    <Text style={{color : 'white' }}>Discussion with Client</Text>
+                    <Text style={{color : 'red' }}>I Agree to Digi Cardx Terms of Use</Text>
                   </Body>
                 </ListItem>
                 </Content>
