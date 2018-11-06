@@ -1,12 +1,49 @@
 import React, { Component } from 'react'
 
-class Drawer extends Component {
+import { View , Text , PropTypes } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+
+import { Content , ListItem , List } from 'native-base';
+export default class Drawer extends Component {
+
+    static propTypes = {
+       // closeDrawer: PropTypes.func.isRequired
+      };
+    
   render() {
+
+     
     return (
-      <div>
-        
-      </div>
+      <View style={{flex:1}}>
+        <View style={{flex:1,backgroundColor:'white',justifyContent:'center',alignItems:'center'}}>
+
+            <Text onPress={ ()=>actions.homepage() }>Go to Scene 2</Text>
+
+
+         </View>
+
+         <View style={{flex:2,backgroundColor:'white',justifyContent:'center',alignItems:'center'}}>
+
+         <Text onPress={ ()=>actions.homepage() }>Go to Scene 2</Text>
+                <Content>
+                    <List>
+                        <ListItem>
+                            <Text>Menu 1</Text>
+                        </ListItem>
+                        <ListItem>
+                        <Text>Menu 2</Text>
+                    </ListItem>
+                    </List>
+
+                </Content>
+
+
+         </View>
+
+
+      </View>
     )
   }
+  
+
 }
-export default Drawer
