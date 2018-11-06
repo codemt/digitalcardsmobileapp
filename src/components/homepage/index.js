@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import { Container } from 'native-base';
+import {Platform, StyleSheet, Text, View , Image} from 'react-native';
+import { Header , Container, Body , Content } from 'native-base';
 import { Toolbar } from 'react-native-material-ui';
-import { DrawerNavigator } from 'react-navigation';
+import { DrawerNavigator, DrawerItems } from 'react-navigation';
 import SideBar from '../drawer/index';
 import Home from '../drawer/home/index';
 import AboutUs from '../drawer/aboutus/index';
+import Terms from '../drawer/termsofuse/index';
+import SMSCards from '../drawer/cardsms/index';
  class HomePage extends Component {
      
   render() {
@@ -18,6 +20,35 @@ import AboutUs from '../drawer/aboutus/index';
     )
   }
 }
+
+const CustomDrawerContentComponent = (props) => (
+
+
+            <Container>
+                    <Header style={styles.drawerHeader}>
+                        <Body>
+                            <Image 
+                            
+                                    style={styles.drawerImage}
+                                    source={require('../../assets/images/batlogo.png')}
+                            
+                            />
+                        </Body>
+
+                    </Header>
+                    <Content>
+
+                            <DrawerItems {...props} />
+                    </Content>
+
+
+            </Container>
+
+
+
+
+
+)
 
 const Drawer = DrawerNavigator({
 
@@ -32,10 +63,33 @@ const Drawer = DrawerNavigator({
                 screen : AboutUs
 
 
+        },
+        TermsofUse : {
+
+
+               screen : Terms 
+
+        },
+        SMSCards : {
+
+
+            screen : SMSCards
+
         }
+
+},{
+
+
+            initialRouteName:'Home',
+            drawerPosition:'left',
+            contentComponent :CustomDrawerContentComponent,
+            drawerOpenRoute : 'DrawerOpen',
+            drawerCloseRoute : 'DrawerClose',
+            drawerToggleRoute:'DrawerToggle'
 
 
 })
+
 export default HomePage
 const styles = StyleSheet.create({
 
@@ -82,6 +136,19 @@ const styles = StyleSheet.create({
       paddingBottom: 10,
      // justifyContent:'space-between'
 
+
+  },
+  drawerHeader : {
+
+
+            height:200,
+            backgroundColor:'white'
+
+  },
+  drawerImage:{
+
+
+        paddingLeft : 0
 
   }
 
