@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Container } from 'native-base';
 import { Toolbar } from 'react-native-material-ui';
-import { createDrawerNavigator } from 'react-navigation';
+import { DrawerNavigator } from 'react-navigation';
 import SideBar from '../drawer/index';
 import Home from '../drawer/home/index';
 import AboutUs from '../drawer/aboutus/index';
@@ -19,7 +19,7 @@ import AboutUs from '../drawer/aboutus/index';
   }
 }
 
-const Drawer = createDrawerNavigator({
+const Drawer = DrawerNavigator({
 
 
         Home : {

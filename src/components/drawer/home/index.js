@@ -3,10 +3,19 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Container } from 'native-base';
 import { Toolbar } from 'react-native-material-ui';
  class Home extends Component {
+
+    
+    navigate() {
+        this.props.navigation.openDrawer();
+    }
   render() {
     return (
+
+
+
         <Container style={styles.container}>
                         <Toolbar
+                        onLeftElementPress={ () => this.navigate()}
                         style={{ container: { backgroundColor: 'black' },centerElementContainer: {alignContent:'center'}}}
                         leftElement="menu"
                         centerElement="My Cards"
