@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Container } from 'native-base';
-import { Drawer } from 'native-base';
 import { Toolbar } from 'react-native-material-ui';
 import SideBar from '../drawer/index';
  class HomePage extends Component {
@@ -9,12 +8,6 @@ import SideBar from '../drawer/index';
   render() {
 
 
-    closeDrawer = () => {
-        this.drawer._root.close()
-      };
-      openDrawer = () => {
-        this.drawer._root.open()
-      };
     return (
 
         <Container style={styles.container}>
@@ -29,21 +22,7 @@ import SideBar from '../drawer/index';
                     
                  
                 
-                />
-
-                <Drawer
-                        ref={(ref) => { this.drawer = ref; }}
-                        content={<SideBar navigator={this.navigator} />}
-                        onClose={() => this.closeDrawer()} >
-                    // Main View
-                 </Drawer>
-
-
-
-           
-                
-
-               
+                /> 
             </Container>
 
     )
