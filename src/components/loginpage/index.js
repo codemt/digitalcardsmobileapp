@@ -32,11 +32,11 @@ export default class LoginPage extends Component {
                         <Button danger style={{ marginRight: 10,width:175,height:50 }} ><Text> Google </Text></Button>         
                   </View>  
                   <ListItem>
-                      <CheckBox checked={true} />
-                      <Body>
-                        <Text style={{color : 'white' }}>Discussion with Client</Text>
-                      </Body>
-                  </ListItem>
+                  <CheckBox checked={false} />
+                  <Body>
+                    <Text style={{color : 'white' }}>Discussion with Client</Text>
+                  </Body>
+                </ListItem>
                 </Content>
               </Container>
               )
