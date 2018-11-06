@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Container, Header, Content, Form, Item, Input, Label , Button , Body, CheckBox ,ListItem, Text , View  } from 'native-base';
 import { StyleSheet , Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Actions } from 'react-native-router-flux';
 
 export default class LoginPage extends Component {
   render() {
@@ -23,14 +24,14 @@ export default class LoginPage extends Component {
                        <Icon name="mobile" size={30} color="red" style={{marginRight:10}}  />
                       <Input  keyboardType="numeric" style={{ color: 'white'}}  />
                     </Item>
-                    <Button full bordered light  style={styles.button}>
+                    <Button full bordered light  onPress={ ()=> Actions.homepage() }   style={styles.button}>
                     <Text style={{ color: 'red',textAlign:'center'}}> Sign Up/Sign In </Text>
                   </Button>
                   </Form>
                   <Text style={{ color: 'red',textAlign:'center',marginTop:10}}>Or</Text>
                   <Text style={{ color: 'white',textAlign:'center',marginTop:10,marginBottom:10}}>Sign in With</Text>
                   <View style={styles.social}> 
-                        <Button block style={{ marginRight: 10,width:175,height:50 }}><Text> Facebook </Text></Button>
+                        <Button   onPress={ ()=> Actions.homepage() } block style={{ marginRight: 10,width:175,height:50 }}><Text> Facebook </Text></Button>
                         <Button danger style={{ marginRight: 10,width:175,height:50 }} ><Text> Google </Text></Button>         
                   </View>  
                   <ListItem>
@@ -41,6 +42,9 @@ export default class LoginPage extends Component {
                 </ListItem>
                 </Content>
               </Container>
+
+
+
               )
   }
 }
