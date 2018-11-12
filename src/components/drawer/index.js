@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { View , Text , PropTypes } from 'react-native';
+import { View , Text , PropTypes, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import { Content , ListItem , List } from 'native-base';
@@ -14,7 +14,7 @@ export default class Drawer extends Component {
 
      
     return (
-      <View style={{flex:1}}>
+      <View style={{flex:1,backgroundColor:'white'}}>
         <View style={{flex:1,backgroundColor:'white',justifyContent:'center',alignItems:'center'}}>
 
             <Text onPress={ ()=>actions.homepage() }>Go to Scene 2</Text>
@@ -47,3 +47,10 @@ export default class Drawer extends Component {
   
 
 }
+
+const styles = StyleSheet.create({
+
+
+    
+
+});

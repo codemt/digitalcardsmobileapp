@@ -36,9 +36,16 @@ const CustomDrawerContentComponent = (props) => (
                         </Body>
 
                     </Header>
-                    <Content>
-
-                            <DrawerItems {...props} />
+                    <Content style={styles.drawerItems}>
+                                    
+                            <DrawerItems {...props} 
+                            style={{
+                            borderBottomColor: 'white',
+                            borderBottomWidth: 1,
+                            }} 
+                            
+                            />
+                        
                     </Content>
 
 
@@ -75,7 +82,8 @@ const Drawer = DrawerNavigator({
 
             screen : SMSCards
 
-        }
+        },
+        
 
 },{
 
@@ -85,7 +93,17 @@ const Drawer = DrawerNavigator({
             contentComponent :CustomDrawerContentComponent,
             drawerOpenRoute : 'DrawerOpen',
             drawerCloseRoute : 'DrawerClose',
-            drawerToggleRoute:'DrawerToggle'
+            drawerToggleRoute:'DrawerToggle',
+            drawerBackgroundColor: 'black',
+            contentOptions: {
+                labelStyle: {
+                  fontFamily: 'SomeFont',
+                  color: 'red',
+                 
+                },
+              },
+              borderBottomColor: 'white',
+              borderBottomWidth: 1,
 
 
 })
@@ -142,13 +160,21 @@ const styles = StyleSheet.create({
 
 
             height:200,
-            backgroundColor:'white'
+            backgroundColor:'black'
 
   },
+  drawerItems : {
+
+
+    backgroundColor:'black',
+    color : 'white'
+
+},
   drawerImage:{
 
 
-        paddingLeft : 0
+        paddingLeft : 0,
+        color : 'white'
 
   }
 
