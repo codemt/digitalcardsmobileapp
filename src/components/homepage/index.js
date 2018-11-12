@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Platform, StyleSheet, Text, View , Image} from 'react-native';
+import {Platform, StyleSheet, Text, View , Image , Button , TouchableOpacity, Alert  } from 'react-native';
 import { Header , Container, Body , Content } from 'native-base';
 import { Toolbar } from 'react-native-material-ui';
 import { DrawerNavigator, DrawerItems } from 'react-navigation';
@@ -8,7 +8,16 @@ import Home from '../drawer/home/index';
 import AboutUs from '../drawer/aboutus/index';
 import Terms from '../drawer/termsofuse/index';
 import SMSCards from '../drawer/cardsms/index';
+import NavigationBar from 'react-native-navbar-color';
+import Logout from '../drawer/logout/index';
  class HomePage extends Component {
+
+    componentDidMount() {
+        NavigationBar.setColor('black');
+        NavigationBar.setStatusBarColor('black',true);
+    }
+
+    
      
   render() {
 
@@ -22,6 +31,8 @@ import SMSCards from '../drawer/cardsms/index';
 }
 
 const CustomDrawerContentComponent = (props) => (
+
+    
 
 
             <Container>
@@ -45,6 +56,23 @@ const CustomDrawerContentComponent = (props) => (
                             }} 
                             
                             />
+                            <TouchableOpacity onPress={()=>
+                                Alert.alert(
+                                  'Log out',
+                                  'Do you want to logout?',
+                                  [
+                                    {text: 'Cancel', onPress: () => {return null}},
+                                    {text: 'Confirm', onPress: () => {
+                                    //  Asyncstorage.clear();
+                                      props.navigation.navigate('homepage')
+                                    }},
+                                  ],
+                                  { cancelable: false }
+                                )  
+                              }>
+                                <Text style={{margin: 16,fontWeight: 'bold',color:'red'}}>Logout</Text>
+                              </TouchableOpacity>
+                           
                         
                     </Content>
 
@@ -84,12 +112,14 @@ const Drawer = DrawerNavigator({
 
         },
         
+        
 
 },{
 
 
             initialRouteName:'Home',
             drawerPosition:'left',
+            drawerWidth: 350,
             contentComponent :CustomDrawerContentComponent,
             drawerOpenRoute : 'DrawerOpen',
             drawerCloseRoute : 'DrawerClose',

@@ -5,7 +5,14 @@ import React, {Component} from 'react';
 import App from './App';
 import {name as appName} from './app.json';
 import SplashScreen from './src/components/splashscreen/index';
+import NavigationBar from 'react-native-navbar-color'
 class Main extends Component{
+
+    componentDidMount() {
+        NavigationBar.setColor('black');
+        NavigationBar.setStatusBarColor('black',true);
+    }
+
 
     constructor(props){
 

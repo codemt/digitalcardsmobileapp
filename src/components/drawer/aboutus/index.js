@@ -2,8 +2,15 @@ import React, { Component } from 'react'
 import { View , Text , StyleSheet } from 'react-native';
 import { Toolbar } from 'react-native-material-ui';
 import { Container, Header , Content, Left, Icon , CardItem } from 'native-base';
+import NavigationBar from 'react-native-navbar-color'
 
  class AboutUs extends Component {
+
+    componentDidMount() {
+        NavigationBar.setColor('black');
+        NavigationBar.setStatusBarColor('black',true);
+    }
+
 
     navigate() {
             this.props.navigation.openDrawer();
